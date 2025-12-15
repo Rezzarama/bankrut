@@ -5,6 +5,7 @@ import coreRoutes from "./routes/core.js";
 import historyRoutes from "./routes/history.js";
 import accountsSyncRoutes from "./routes/accounts-snapshot.js";
 import transactionsRoutes from "./routes/transactions.js";
+import healthRoutes from "./routes/health.js";
 
 dotenv.config();
 const app = express();
@@ -22,6 +23,7 @@ app.use("/api/v1/history", historyRoutes);
 app.use("/core", coreRoutes);
 app.use("/core", accountsSyncRoutes);
 app.use("/api/v1/transactions", transactionsRoutes);
+app.use("/health", healthRoutes);
 
 app.listen(process.env.PORT, () =>
   console.log(`Middleware on ${process.env.PORT}`)

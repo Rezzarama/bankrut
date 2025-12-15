@@ -9,6 +9,7 @@ import customersRoutes from "./routes/customers.js";
 import historyRoutes from "./routes/history.js";
 import syncRoutes from "./routes/sync.js";
 import transactionsRoutes from "./routes/transactions.js";
+import healthRoutes from "./routes/health.js";
 
 dotenv.config();
 const app = express();
@@ -84,6 +85,7 @@ app.use("/api/v1/customers", customersRoutes);
 app.use("/api/v1/history", historyRoutes);
 app.use("/api/v1/sync", syncRoutes);
 app.use("/api/v1/transactions", transactionsRoutes);
+app.use("/health", healthRoutes);
 
 // (Opsional) endpoint health untuk ngetes dari HP
 app.get("/api/v1/health", (_req, res) => {

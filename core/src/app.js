@@ -5,6 +5,7 @@ import accountsRoutes from "./routes/accounts.js";
 import historyRoutes from "./routes/history.js";
 import accountsSyncRoutes from "./routes/accounts-sync.js";
 import transactionsRoutes from "./routes/transactions.js";
+import healthRoutes from "./routes/health.js";
 
 dotenv.config();
 const app = express();
@@ -22,5 +23,6 @@ app.use("/api/v1/accounts", accountsRoutes);
 app.use("/api/v1/history", historyRoutes);
 app.use("/api/v1/accounts", accountsSyncRoutes);
 app.use("/api/v1/transactions", transactionsRoutes);
+app.use("/health", healthRoutes);
 
 app.listen(process.env.PORT, () => console.log(`Core on ${process.env.PORT}`));
